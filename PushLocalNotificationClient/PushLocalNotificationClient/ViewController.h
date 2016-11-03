@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-{
-    BOOL deviceTokenFlg; //デバイストークンフラグ YES:デバイストークンがセットされている NO:デバイストークンがセットされていない
-}
+
+
+@property (nonatomic) BOOL mDeviceTokenFlg;//デバイストークンフラグ YES:デバイストークンがセットされている NO:セットされていない
+
 @property (strong,nonatomic) IBOutlet UILabel    *mLblStatusLabel;
 @property (strong,nonatomic) IBOutlet UILabel    *mLblDeviceTokenLabel;
 

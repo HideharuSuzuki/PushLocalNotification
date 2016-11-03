@@ -19,7 +19,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    deviceTokenFlg = NO;
+    self.mDeviceTokenFlg = NO;
     self.mBtnSendDeviceToken.userInteractionEnabled = NO;
     self.mBtnSendDeviceToken.alpha = 0.1;
 }
@@ -34,7 +34,7 @@
     }
     
     NSString *strDeviceToken  = dataDeviceToken.description;
-    deviceTokenFlg = YES;
+    self.mDeviceTokenFlg = YES;
     
     //デバイストークンをラベルにセット・送信ボタン有効
     self.mLblDeviceTokenLabel.text = strDeviceToken;
