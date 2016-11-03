@@ -110,6 +110,15 @@
 				TargetAttributes = {
 					6913A8001DCB3B90000616B7 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = AW5D4V5EGZ;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -265,10 +274,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hideharu Suzuki (PJEPPBJNHF)";
 				INFOPLIST_FILE = PushLocalNotificationServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.PushLocalNotification.PushLocalNotificationServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6774dcaf-6b1f-4384-befb-a4871d2e158b";
 			};
 			name = Debug;
 		};
@@ -276,10 +287,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hideharu Suzuki (PJEPPBJNHF)";
 				INFOPLIST_FILE = PushLocalNotificationServer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.PushLocalNotification.PushLocalNotificationServer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6774dcaf-6b1f-4384-befb-a4871d2e158b";
 			};
 			name = Release;
 		};
@@ -302,6 +315,7 @@
 				6913A81A1DCB3B90000616B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
