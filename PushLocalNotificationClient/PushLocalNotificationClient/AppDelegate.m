@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,7 +18,72 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //端末iOSバージョンの取得・保持
+    NSString  *strSystemVersion = [UIDevice currentDevice].systemVersion;
+    NSArray   *arrSystemVersion = [strSystemVersion componentsSeparatedByString:@"."]; //.で分離
+    NSInteger nSystemVersion    = [arrSystemVersion[0] integerValue]; //iOSバージョン整数部分
+    
+    //iOSバージョン判定と分岐・プッシュ通知のタイプ設定・確認ダイアログ表示(iOS8.9は合っているか要確認)
+    if( nSystemVersion <= 7 ){ //iOS7以下 floor:小数点切り捨て
+        
+        //アラート・警告音・バッジ設定
+        [application registerForRemoteNotificationTypes:
+            UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeBadge];
+        
+    }else if( nSystemVersion <= 8 ){ //iOS8
+        
+        [application registerForRemoteNotifications];
+        
+    }else if ( nSystemVersion <= 9 ){ //iOS9
+        
+        [application registerForRemoteNotifications];
+        UIUserNotificationType types = UIUserNotificationTypeBadge| UIUserNotificationTypeSound| UIUserNotificationTypeAlert;
+        UIUserNotificationSettings *mySettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [application registerUserNotificationSettings:mySettings];
+
+        
+    }else{ //iOS10以上
+        
+        
+        
+    }
+    
+    //以上より、確認ダイアログでユーザーがOKを選択すると、端末情報とタイプ設定をAPNサーバーに登録
+    //APNサーバーはデバイストークンを生成
+    //UIApplicationDelegateメソッドによりデバイストークンを取得できる
+    
+    
     return YES;
+}
+
+#pragma mark UIApplicationDelegate
+
+//プッシュ通知用DeviceToken取得メソッド
+//引数 1:アプリインスタンス 2:デバイストークン
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    
+    NSLog(@"deviceToken receive OK: %@", [deviceToken description]);
+    
+    self.deviceToken = deviceToken; //デバイストークン保持
+    
+    [self postInformationToServer];
+}
+
+//プッシュ通知用DeviceToken取得失敗メソッド
+//引数 1:アプリインスタンス 2:エラーオブジェクト
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    
+    
+    NSLog(@"deviceToken receive error: %@", [error description]);
+    
+    //DeviceToken取得失敗をステータスラベルに反映
+    ViewController *viewController = (ViewController *)[[application keyWindow] rootViewController];
+    viewController.mLblStatusLabel.text = @"Failed to register with Apple";
+}
+
+-(void)postInformationToServer{
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

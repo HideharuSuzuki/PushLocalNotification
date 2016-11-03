@@ -10,7 +10,8 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong,nonatomic) NSData   *deviceToken; //デバイストークン
+@property (strong,nonatomic) UIWindow *window;
 
 
 @end

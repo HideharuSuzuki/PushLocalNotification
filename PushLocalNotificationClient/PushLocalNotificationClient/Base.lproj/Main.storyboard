@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,36 +20,149 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="プッシュ通知で来たお知らせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJR-Zs-d1J">
-                                <rect key="frame" x="40" y="55" width="221" height="21"/>
+                                <rect key="frame" x="20" y="197" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ローカル通知で来たお知らせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuB-K5-0DW">
-                                <rect key="frame" x="35" y="304" width="377" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ステータス情報" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJ1-aa-1Hx">
+                                <rect key="frame" x="20" y="25" width="550" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="I8N-R2-c9k">
-                                <rect key="frame" x="35" y="343" width="525" height="192"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="デバイストークン情報" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hg-JH-CsV">
+                                <rect key="frame" x="20" y="82" width="280" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="デバイストークン情報がここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFg-CH-O6n">
+                                <rect key="frame" x="20" y="112" width="560" height="35"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Bct-YX-jpO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ステータス情報がここに入ります" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4R-K0-m24">
+                                <rect key="frame" x="20" y="51" width="560" height="21"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サイレント通知で来たお知らせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuB-K5-0DW">
+                                <rect key="frame" x="20" y="313" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1M2-rY-Ady">
+                                <rect key="frame" x="20" y="223" width="560" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="DWV-wS-GEA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1M2-rY-Ady">
-                                <rect key="frame" x="35" y="96" width="525" height="192"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mfd-jS-HyM">
+                                <rect key="frame" x="20" y="455" width="560" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Ify-gX-7n7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ローカル通知で来たお知らせ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFF-SL-zpY">
+                                <rect key="frame" x="20" y="429" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PM3-HT-vJx">
+                                <rect key="frame" x="20" y="157" width="560" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="デバイストークンをサーバーに送信">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="fncTapSendDeviceToken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gi6-fL-TCZ"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aby-Uq-QMs">
+                                <rect key="frame" x="20" y="339" width="560" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="RD6-fs-YtB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lAX-uu-fw5">
+                                <rect key="frame" x="300" y="76.5" width="280" height="28"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="デバイストークン取得">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="fncTapGetDeviceToken:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4iR-Cc-B3l"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="BJR-Zs-d1J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="PN5-Rf-MKF"/>
-                            <constraint firstItem="BJR-Zs-d1J" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="opG-HF-BJ2"/>
+                            <constraint firstItem="kFF-SL-zpY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2aI-xR-deq"/>
+                            <constraint firstItem="lAX-uu-fw5" firstAttribute="leading" secondItem="3hg-JH-CsV" secondAttribute="trailing" id="5XU-mZ-b18"/>
+                            <constraint firstItem="kFF-SL-zpY" firstAttribute="top" secondItem="aby-Uq-QMs" secondAttribute="bottom" constant="10" id="6Uq-VQ-qpk"/>
+                            <constraint firstItem="lAX-uu-fw5" firstAttribute="centerY" secondItem="3hg-JH-CsV" secondAttribute="centerY" id="ANf-h2-Xsg"/>
+                            <constraint firstItem="1M2-rY-Ady" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AWw-zQ-73c"/>
+                            <constraint firstItem="O4R-K0-m24" firstAttribute="top" secondItem="yJ1-aa-1Hx" secondAttribute="bottom" constant="5" id="BSl-UT-OUm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="O4R-K0-m24" secondAttribute="trailing" id="C34-qR-DXA"/>
+                            <constraint firstItem="gFg-CH-O6n" firstAttribute="top" secondItem="3hg-JH-CsV" secondAttribute="bottom" constant="12" id="CGM-1k-wZU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kFF-SL-zpY" secondAttribute="trailing" id="HsA-rG-2nJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1M2-rY-Ady" secondAttribute="trailing" id="IRa-Uq-XmJ"/>
+                            <constraint firstItem="yJ1-aa-1Hx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="Ip0-tp-g5W"/>
+                            <constraint firstItem="gFg-CH-O6n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Izh-zO-Hai"/>
+                            <constraint firstItem="BJR-Zs-d1J" firstAttribute="top" secondItem="PM3-HT-vJx" secondAttribute="bottom" constant="10" id="Ko4-Td-Kdi"/>
+                            <constraint firstItem="1M2-rY-Ady" firstAttribute="top" secondItem="BJR-Zs-d1J" secondAttribute="bottom" constant="5" id="LML-ZW-Rf4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aby-Uq-QMs" secondAttribute="trailing" id="OKP-8o-744"/>
+                            <constraint firstItem="BJR-Zs-d1J" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="PN5-Rf-MKF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YuB-K5-0DW" secondAttribute="trailing" id="Rz2-0F-VhK"/>
+                            <constraint firstItem="lAX-uu-fw5" firstAttribute="width" secondItem="O4R-K0-m24" secondAttribute="width" multiplier="0.5" id="UR3-VO-AgK"/>
+                            <constraint firstItem="mfd-jS-HyM" firstAttribute="top" secondItem="kFF-SL-zpY" secondAttribute="bottom" constant="5" id="Vj7-85-mrN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BJR-Zs-d1J" secondAttribute="trailing" id="W6b-G0-c0O"/>
+                            <constraint firstItem="aby-Uq-QMs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="XJl-bk-psb"/>
+                            <constraint firstItem="yJ1-aa-1Hx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cFD-8u-Z6z"/>
+                            <constraint firstItem="YuB-K5-0DW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cQT-3d-dss"/>
+                            <constraint firstItem="PM3-HT-vJx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="h9F-JH-st8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yJ1-aa-1Hx" secondAttribute="trailing" constant="10" id="lQT-Ha-eB6"/>
+                            <constraint firstItem="PM3-HT-vJx" firstAttribute="top" secondItem="gFg-CH-O6n" secondAttribute="bottom" constant="10" id="n8c-w4-nzd"/>
+                            <constraint firstItem="mfd-jS-HyM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="nd8-qd-Y8F"/>
+                            <constraint firstItem="O4R-K0-m24" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="o3S-xh-iQD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gFg-CH-O6n" secondAttribute="trailing" id="pad-He-Fls"/>
+                            <constraint firstItem="3hg-JH-CsV" firstAttribute="top" secondItem="O4R-K0-m24" secondAttribute="bottom" constant="10" id="r5Y-3Y-vPw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mfd-jS-HyM" secondAttribute="trailing" id="spk-0Y-qBj"/>
+                            <constraint firstItem="3hg-JH-CsV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uN4-UZ-BDb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PM3-HT-vJx" secondAttribute="trailing" id="xIa-qF-jUp"/>
+                            <constraint firstItem="YuB-K5-0DW" firstAttribute="top" secondItem="1M2-rY-Ady" secondAttribute="bottom" constant="10" id="yHj-jr-tf0"/>
+                            <constraint firstItem="3hg-JH-CsV" firstAttribute="width" secondItem="O4R-K0-m24" secondAttribute="width" multiplier="0.5" id="yWP-xb-3hL"/>
+                            <constraint firstItem="aby-Uq-QMs" firstAttribute="top" secondItem="YuB-K5-0DW" secondAttribute="bottom" constant="5" id="zZI-0O-Ru1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mBtnSendDeviceToken" destination="PM3-HT-vJx" id="KIJ-mh-iwN"/>
+                        <outlet property="mLblDeviceTokenLabel" destination="gFg-CH-O6n" id="Po5-qB-Q0o"/>
+                        <outlet property="mLblStatusLabel" destination="O4R-K0-m24" id="fTS-Ic-5fn"/>
+                        <outlet property="mTxtLocalNotification" destination="mfd-jS-HyM" id="EnL-4G-0QO"/>
+                        <outlet property="mTxtPushNotification" destination="1M2-rY-Ady" id="cUg-1S-KL9"/>
+                        <outlet property="mTxtSilentNotification" destination="aby-Uq-QMs" id="X1D-O1-dXW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
