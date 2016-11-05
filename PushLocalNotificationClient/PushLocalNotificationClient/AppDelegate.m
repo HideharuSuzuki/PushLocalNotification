@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "ClientViewController.h"
 
 @interface AppDelegate ()
 
@@ -49,10 +49,9 @@
         
     }
     
-    //以上より、確認ダイアログでユーザーがOKを選択すると、端末情報とタイプ設定をAPNサーバーに登録
-    //APNサーバーはデバイストークンを生成
+    //以上より、初回起動時プッシュ通知の確認ダイアログを表示
+    //OK・キャンセル問わず、端末情報と通知タイプ設定をAPNSに登録(のはず)・デバイストークンを生成
     //UIApplicationDelegateメソッドによりデバイストークンを取得できる
-    
     
     return YES;
 }
@@ -63,11 +62,9 @@
 //引数 1:アプリインスタンス 2:デバイストークン
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
     
-    NSLog(@"deviceToken receive OK: %@", [deviceToken description]);
+    NSLog(@"deviceToken register OK: %@", [deviceToken description]);
     
     self.deviceToken = deviceToken; //デバイストークン保持
-    
-    [self postInformationToServer];
 }
 
 //プッシュ通知用DeviceToken取得失敗メソッド
@@ -75,15 +72,11 @@
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     
     
-    NSLog(@"deviceToken receive error: %@", [error description]);
+    NSLog(@"deviceToken register error: %@", [error description]);
     
-    //DeviceToken取得失敗をステータスラベルに反映
-    ViewController *viewController = (ViewController *)[[application keyWindow] rootViewController];
-    viewController.mLblStatusLabel.text = @"Failed to register with Apple";
-}
-
--(void)postInformationToServer{
-
+    //DeviceToken取得失敗をラベルに反映
+    ClientViewController *clientViewController = (ClientViewController *)[[application keyWindow] rootViewController];
+    clientViewController.m_LblDeviceTokenInfo.text = @"Failed to register with Apple";
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
