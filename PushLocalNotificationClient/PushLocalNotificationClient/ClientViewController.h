@@ -17,7 +17,7 @@
 @property (nonatomic) BOOL m_DeviceTokenFlg; //デバイストークンフラグ YES:デバイストークンがセットされている NO:セットされていない
 @property (nonatomic) BOOL m_ConnectionFlg; //サーバーとの接続フラグ YES: サーバーと接続 NO:サーバーと未接続
 
-@property (strong,nonatomic) IBOutlet UILabel    *m_LblConnectionStatus;
+@property (strong,nonatomic) IBOutlet UILabel    *m_LblConnectionStatus; //接続ステータス情報ラベル
 @property (strong,nonatomic) IBOutlet UILabel    *m_LblDeviceTokenInfo;
 
 @property (strong,nonatomic) IBOutlet UIButton   *m_BtnSendDeviceToken;
@@ -29,6 +29,8 @@
 -(IBAction)fncTapBtnGetDeviceToken:(id)sender; //デバイストークン取得
 -(IBAction)fncTapBtnConnectionToServer:(id)sender; //サーバーと接続
 -(IBAction)fncTapBtnSendDeviceToken:(id)sender; //デバイストークンをサーバーに送信
+
+-(void)fncRewriteConnectionStatus; //サーバーとの接続状態の書き換え
 
 
 @end

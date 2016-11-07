@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		6913A8061DCB3B90000616B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6913A8051DCB3B90000616B7 /* main.m */; };
 		6913A8091DCB3B90000616B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6913A8081DCB3B90000616B7 /* AppDelegate.m */; };
-		6913A80C1DCB3B90000616B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6913A80B1DCB3B90000616B7 /* ViewController.m */; };
+		6913A80C1DCB3B90000616B7 /* ServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6913A80B1DCB3B90000616B7 /* ServerViewController.m */; };
 		6913A80F1DCB3B90000616B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6913A80D1DCB3B90000616B7 /* Main.storyboard */; };
 		6913A8111DCB3B90000616B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6913A8101DCB3B90000616B7 /* Assets.xcassets */; };
 		6913A8141DCB3B90000616B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6913A8121DCB3B90000616B7 /* LaunchScreen.storyboard */; };
@@ -21,12 +21,13 @@
 		6913A8051DCB3B90000616B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6913A8071DCB3B90000616B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6913A8081DCB3B90000616B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6913A80A1DCB3B90000616B7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6913A80B1DCB3B90000616B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6913A80A1DCB3B90000616B7 /* ServerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ServerViewController.h; sourceTree = "<group>"; };
+		6913A80B1DCB3B90000616B7 /* ServerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ServerViewController.m; sourceTree = "<group>"; };
 		6913A80E1DCB3B90000616B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6913A8101DCB3B90000616B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6913A8131DCB3B90000616B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6913A8151DCB3B90000616B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6991A6541DCDFE7E00D25DE5 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 		69ACC6AB1DCB9F6D004545D8 /* ServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerController.h; sourceTree = "<group>"; };
 		69ACC6AC1DCB9F6D004545D8 /* ServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,10 +64,11 @@
 			children = (
 				6913A8071DCB3B90000616B7 /* AppDelegate.h */,
 				6913A8081DCB3B90000616B7 /* AppDelegate.m */,
-				6913A80A1DCB3B90000616B7 /* ViewController.h */,
-				6913A80B1DCB3B90000616B7 /* ViewController.m */,
+				6913A80A1DCB3B90000616B7 /* ServerViewController.h */,
+				6913A80B1DCB3B90000616B7 /* ServerViewController.m */,
 				69ACC6AB1DCB9F6D004545D8 /* ServerController.h */,
 				69ACC6AC1DCB9F6D004545D8 /* ServerController.m */,
+				6991A6541DCDFE7E00D25DE5 /* Define.h */,
 				6913A80D1DCB3B90000616B7 /* Main.storyboard */,
 				6913A8101DCB3B90000616B7 /* Assets.xcassets */,
 				6913A8121DCB3B90000616B7 /* LaunchScreen.storyboard */,
@@ -164,7 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69ACC6AD1DCB9F6D004545D8 /* ServerController.m in Sources */,
-				6913A80C1DCB3B90000616B7 /* ViewController.m in Sources */,
+				6913A80C1DCB3B90000616B7 /* ServerViewController.m in Sources */,
 				6913A8091DCB3B90000616B7 /* AppDelegate.m in Sources */,
 				6913A8061DCB3B90000616B7 /* main.m in Sources */,
 			);

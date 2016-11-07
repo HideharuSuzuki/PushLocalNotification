@@ -6,6 +6,7 @@
 //  Copyright © 2016年 Suzuki.Works. All rights reserved.
 //
 
+#import "Define.h"
 #import "AppDelegate.h"
 #import "ClientViewController.h"
 #import "ClientController.h"
@@ -21,7 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    
     //変数初期化
+    self.m_ClientController = [ClientController defaultClientController];
     self.m_DeviceTokenFlg = NO;
     self.m_ConnectionFlg  = NO;
     self.m_BtnSendDeviceToken.userInteractionEnabled = NO;
@@ -50,15 +53,13 @@
 //サーバーと接続
 -(IBAction)fncTapBtnConnectionToServer:(id)sender{
     
-    self.m_ClientController = [ClientController defaultCustomerController];
     [self.m_ClientController fncInitClientFunction];
+    [self.m_ClientController fncConnectionToServer];
+    [self fncRewriteConnectionStatus];
     
-    if( [self.m_ClientController fncConnectionToServer] == -1 ){
-        self.m_LblConnectionStatus.text = @"サーバーと接続失敗";
-        return;
+    if(self.m_ClientController.m_nConnectionState == kWHILE_CONNECT){
+        self.m_ConnectionFlg = YES;
     }
-    
-    self.m_LblConnectionStatus.text = @"サーバーと接続中";
     
     //デバイストークンの送信ボタンの有効化チェック
     if( (self.m_DeviceTokenFlg == YES) && (self.m_ConnectionFlg == YES) ){
@@ -73,10 +74,37 @@
     //デバイストークンとサーバーとの接続があれば、デバイストークンを送信
     if( (self.m_DeviceTokenFlg == YES) && (self.m_ConnectionFlg == YES) ){
         
+        NSData   *dataDeviceToken = [(AppDelegate*)[[UIApplication sharedApplication] delegate] deviceToken];
+        [self.m_ClientController fncSendToServer:dataDeviceToken.description];
     }
-    
 }
 
+#pragma mark Rewrite Method
+
+//クライアントとの接続状態の書き換え
+-(void)fncRewriteConnectionStatus{
+    
+    switch (self.m_ClientController.m_nConnectionState) {
+        case kCANT_CONNET:{
+            self.m_LblConnectionStatus.text = @"サーバーと接続不可";
+        }break;
+        case kFAILED_SOCKET:{
+            self.m_LblConnectionStatus.text = @"ソケット作成失敗";
+        }break;
+        case kFAILED_CONNECT:{
+            self.m_LblConnectionStatus.text = @"サーバーと接続失敗";
+        }break;
+        case kCAN_CONNET:{
+            self.m_LblConnectionStatus.text = @"サーバーと接続可";
+        }break;
+        case kWHILE_CONNECT:{
+            self.m_LblConnectionStatus.text = @"サーバーと接続中";
+        }break;
+        case kBREAK_CONNECTION:{
+            self.m_LblConnectionStatus.text = @"サーバーと接続が切れました";
+        }break;
+    }
+}
 
 
 - (void)didReceiveMemoryWarning {

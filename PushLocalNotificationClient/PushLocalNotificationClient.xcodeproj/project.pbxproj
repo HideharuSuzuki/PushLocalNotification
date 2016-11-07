@@ -29,6 +29,7 @@
 		6913A7F21DCB3B72000616B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		694FD0F31DCDA516000A5E8B /* ClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientController.h; sourceTree = "<group>"; };
 		694FD0F41DCDA516000A5E8B /* ClientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientController.m; sourceTree = "<group>"; };
+		6991A6571DCDFEC800D25DE5 /* Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 				6913A7E81DCB3B72000616B7 /* ClientViewController.m */,
 				694FD0F31DCDA516000A5E8B /* ClientController.h */,
 				694FD0F41DCDA516000A5E8B /* ClientController.m */,
+				6991A6571DCDFEC800D25DE5 /* Define.h */,
 				6913A7EA1DCB3B72000616B7 /* Main.storyboard */,
 				6913A7ED1DCB3B72000616B7 /* Assets.xcassets */,
 				6913A7EF1DCB3B72000616B7 /* LaunchScreen.storyboard */,

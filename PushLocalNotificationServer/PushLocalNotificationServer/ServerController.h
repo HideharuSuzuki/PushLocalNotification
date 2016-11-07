@@ -8,25 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ServerControllerDelegate <NSObject>
-
--(void)fncRewriteConnectionStatus:(NSString *)a_String; //接続状態の書き換えメソッド
-
-@end
-
 @interface ServerController : NSObject
 
-@property (strong,nonatomic) NSString     *m_StrConnectionStatus;  //接続状態を表す
-@property (nonatomic)        int           m_waittingSocket; //(接続待ち用)ソケットのファイルディスクリプタ
-@property (nonatomic)        int           m_ioStreamSocket; //(入出力用)ソケットのファイルディスクリプタ
+@property (strong,nonatomic) NSString *m_StrDeviceToken; //デバイストークン
 
-@property (nonatomic, assign) id<ServerControllerDelegate> m_delegate; //自作デリゲート
+@property (nonatomic) int m_nConnectionState; //クライアントとの接続状態 Define.hで定義
+@property (nonatomic) int m_waittingSocket;   //(接続待ち用)ソケットディスクリプタ
+@property (nonatomic) int m_ioStreamSocket;   //(入出力用)ソケットディスクリプタ
 
-+(ServerController *)defaultServerController; //初期化(シングルトン)
--(void)fncRewriteConnectionStatus:(NSString *)a_StrRewrite;  //デリゲートメソッド呼び出し(接続状態の書き換え)
++(ServerController *)defaultServerController; //シングルトンで初期化
+
+//ソケット通信メソッド
+-(void)fncInitServerFunction;  //サーバー機能初期化処理
+-(void)fncStartServerFunction; //サーバー機能実行(ソケットの接続待ち受け準備)
+-(void)fncWattingAccept; //サーバーソケットの接続待ち受けループ(サブスレッド)
+-(void)fncRecvFromClient; //クライアントからデータを受信
+-(void)fncSendToClient;   //クライアントにデータを送信
+-(void)fncFinishServerFunction; //サーバー機能終了処理
 
 
-
--(int)fncReadyServerSocket; //サーバーソケットの接続待ち受け準備
--(void)fncAcceptLoop:(int)soc; //サーバーソケットの接続ループ
 @end
